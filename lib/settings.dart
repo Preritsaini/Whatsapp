@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/profile.dart';
 
 class settings extends StatefulWidget {
   const settings({super.key});
@@ -32,7 +33,9 @@ class _settingsState extends State<settings> {
             ListTile(leading: CircleAvatar(radius: 30,backgroundImage: AssetImage('assets/images/profile.jpg'),),
               title: Text('Prerit Saini',style: TextStyle(fontSize: 19),),
               subtitle: Text('No Pain, No Gain'),
-            trailing: Icon(Icons.qr_code,color: Colors.green,),),
+            trailing: Icon(Icons.qr_code,color: Colors.green,),
+            onTap: (){Navigator.push(context,
+            MaterialPageRoute(builder: (context)=>profileScreen()));},),
             Divider(),
             ...List.generate(titles.length, (index) => ListTile(
               title: Text(titles[index]),
